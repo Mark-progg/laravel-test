@@ -15,11 +15,12 @@
 git clone https://github.com/Mark-progg/laravel-test.git
 cd laravel-test
 make up
-make install
+make init
+make migrate
 ```
 
 - Для входа в админку нужно перейти в бразере по 
-http://localhost:8000/admin
+http://localhost:8080/admin
 И воспользоваться этими учетными данными:
 
 | Email             | Пароль     |

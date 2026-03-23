@@ -1,14 +1,16 @@
 up:
 	cp .env.example .env
-	docker-compose up -d
+	docker compose up -d
 
 down:
-	docker-compose down
+	docker compose down
 
 build:
-	docker-compose build --no-cache
+	docker compose build --no-cache
 
-install:
-	docker-compose run app composer install
-	docker-compose run rm app php artisan key:generate
-	docker-compose run rm app php artisan migrate --seed
+init:
+	docker compose run app composer install
+	docker compose run app php artisan key:generate
+	
+migrate:
+	docker compose run app php artisan migrate --seed
