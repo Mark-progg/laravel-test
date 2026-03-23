@@ -17,6 +17,7 @@ class RolesTable
         return $table
             ->columns([
                 TextColumn::make('id')
+                    ->searchable()
                     ->sortable(),
                     
                 TextColumn::make('name')
@@ -29,6 +30,13 @@ class RolesTable
                     
                 TextColumn::make('color')
                     ->badge()
+                    ->color(fn ($record) => match ($record?->color) {
+                        'red' => 'danger',
+                        'yellow' => 'warning',
+                        'green' => 'success',
+                        'gray' => 'gray',
+                        default => 'gray',
+                    })
                     ->sortable(),
                     
                 TextColumn::make('users_count')
@@ -47,7 +55,7 @@ class RolesTable
                         'gray' => 'Gray',
                         'red' => 'Red',
                         'green' => 'Green',
-                        'blue' => 'Blue',
+                        'yellow' => 'Yellow',
                     ]),
             ])
             ->actions([

@@ -9,6 +9,6 @@ build:
 	docker-compose build --no-cache
 
 install:
-	docker-compose run --rm app composer install
-	docker-compose run --rm app php artisan key:generate
-	docker-compose run --rm app php artisan migrate --seed
+	docker-compose run app composer install
+	docker-compose run rm app php artisan key:generate
+	docker-compose run rm app php artisan migrate --seed

@@ -13,10 +13,18 @@ use Filament\Tables\Filters\SelectFilter;
 class UsersTable
 {
     public static function configure(Table $table): Table
+    /*
+        Пусть будут базово только такие цвета для роли
+            'gray'
+            'red'
+            'green'
+            'yellow'
+        */
     {
         return $table
             ->columns([
                 TextColumn::make('id')
+                    ->searchable()
                     ->sortable(),
                     
                 TextColumn::make('name')
@@ -30,20 +38,16 @@ class UsersTable
                 TextColumn::make('role.name')
                     ->label('Role')
                     ->badge()
-                    ->color(fn ($record) => match ($record?->role?->name) {
-                        'admin' => 'danger',
-                        'manager' => 'warning',
-                        'user' => 'success',
+                    ->color(fn ($record) => match ($record?->role?->color) {
+                        'red' => 'danger',
+                        'yellow' => 'warning',
+                        'green' => 'success',
+                        'gray' => 'gray',
                         default => 'gray',
                     })
+                    ->searchable()
                     ->sortable(),
                 
-                TextColumn::make('role.color')
-                    ->label('Role color')
-                    ->badge()
-                    ->color(fn ($record) => $record?->role?->color ?? 'gray')
-                    ->sortable(),
-                    
                 TextColumn::make('companies_count')
                     ->counts('companies')
                     ->label('Companies')

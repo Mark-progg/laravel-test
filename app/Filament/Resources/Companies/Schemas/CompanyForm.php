@@ -3,6 +3,8 @@
 namespace App\Filament\Resources\Companies\Schemas;
 
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
 
 class CompanyForm
 {
@@ -16,7 +18,6 @@ class CompanyForm
                     
                 TextInput::make('inn')
                     ->required()
-                    ->unique(ignoreRecord: true)
                     ->maxLength(255)
                     ->label('INN'),
                     

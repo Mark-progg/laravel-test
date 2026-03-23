@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Company;
-use App\Models\User;
-use App\Models\Role;
 use Illuminate\Database\Seeder;
 
 class CompanySeeder extends Seeder
@@ -20,30 +18,5 @@ class CompanySeeder extends Seeder
         foreach ($companies as $company) {
             Company::create($company);
         }
-
-        $adminRole = Role::where('name', 'admin')->first();
-        $userRole = Role::where('name', 'manager')->first();
-        $managerRole = Role::where('name', 'user')->first();
-
-        User::factory()
-            ->count(3)
-            ->sequence(
-                [
-                    'name' => 'Test Admin',
-                    'email' => 'admin@test.com',
-                    'role_id' => $adminRole?->id,
-                ],
-                [
-                    'name' => 'Test User',
-                    'email' => 'user@test.com',
-                    'role_id' => $userRole?->id,
-                ],
-                [
-                    'name' => 'Test Manager',
-                    'email' => 'manager@test.com',
-                    'role_id' => $managerRole?->id,
-                ]
-            )
-            ->create();
     }
 }

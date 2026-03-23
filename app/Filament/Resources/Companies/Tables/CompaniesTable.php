@@ -17,6 +17,7 @@ class CompaniesTable
         return $table
             ->columns([
                 TextColumn::make('id')
+                    ->searchable()
                     ->sortable(),
                     
                 TextColumn::make('name')

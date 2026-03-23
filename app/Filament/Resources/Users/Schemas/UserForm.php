@@ -29,7 +29,8 @@ class UserForm
                         filled($state) ? bcrypt($state) : null)
                     ->dehydrated(fn ($state) => filled($state))
                     ->required(fn (string $context): bool => $context === 'create')
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->minLenght(8),
                     
                 Select::make('role_id')
                     ->relationship('role', 'name')

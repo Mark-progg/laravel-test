@@ -19,6 +19,12 @@
 /storage/*.key
 /storage/pail
 /vendor
+DTOs/
+app/DTOs/
+app/Http/Controllers/
+app/Http/Requests/
+app/Repositories/
+app/Services/
 Homestead.json
 Homestead.yaml
 Thumbs.db
