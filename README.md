@@ -1,13 +1,14 @@
 # Laravel Test project
 
 ## Описание
-Тестовое задание по созданию мини-бэкенда для админ панели Filament
+Тестовое задание по созданию мини-бэкенда для админ панели Filament, в проекте используются seeder-ы lkz для заполнения Company, User, Role. Приложение доерезировано.
 
 ## Стек
--Laravel 13
--PHP 8.3
--Filament 5.4.1
--PostgrsSQL 18
+- Laravel 13
+- PHP 8.3
+- Filament 5.4.1
+- PostgrsSQL 18
+- Docker
 
 ### Инструкция по запуску
 
