@@ -11,12 +11,10 @@
 
 ### Инструкция по запуску
 
-- ```bash
-make up
-```
-
-- 
 ```bash
+git clone https://github.com/Mark-progg/laravel-test.git
+cd laravel-test
+make up
 make install
 ```
 
@@ -24,5 +22,6 @@ make install
 http://localhost:8000/admin
 И воспользоваться этими учетными данными:
 
-Email: dmin@test.com
-Пароль: password123
+| Email             | Пароль     |
+|-------------------|------------|
+| admin@test.com | `password123` |
